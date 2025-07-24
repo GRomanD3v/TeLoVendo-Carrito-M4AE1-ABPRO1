@@ -1,0 +1,65 @@
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn--secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: #1a252f;
+}
+
+.btn--secondary:hover {
+  background-color: #c0392b;
+}
+
+.btn--large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.btn--icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--highlight-color);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn--icon:hover {
+  background-color: #2980b9;
+}
+
+.wsp {
+  &__button {
+    position: fixed;
+    width: 3.5rem;
+    height: 3.5rem;
+    bottom: 5%;
+    right: 2.0%;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+}

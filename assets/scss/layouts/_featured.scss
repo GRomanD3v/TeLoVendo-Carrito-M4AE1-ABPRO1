@@ -1,0 +1,33 @@
+@use '../abstracts/mixins' as *;
+
+.featured {
+    padding: 5rem 0;
+    background-color: var(--white);
+  }
+  
+  .section {
+    &__title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+  
+    &__subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--dark-color);
+      margin-bottom: 2.5rem;
+    }
+  }
+  
+  .grid--3cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    
+    @include respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -1,0 +1,28 @@
+.card {
+    height: 100%;
+}
+
+.card-body {
+    display: flex;                
+    flex-direction: column;       
+    justify-content: flex-end;
+    height: 100%;                 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card {
+    // ...
+    .card-body {
+        h5, p {
+            flex-grow: 1;
+        }
+
+        .btn {
+            margin-top: auto;
+        }
+    }
+}

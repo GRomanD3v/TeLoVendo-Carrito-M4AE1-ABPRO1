@@ -1,0 +1,39 @@
+// Variables de Bootstrap
+$theme-colors: (
+    primary: #2a7f62,
+    secondary: #e8491d,
+    success: #27ae60,
+    info: #3498db,
+    warning: #f39c12,
+    danger: #e74c3c,
+    light: #f4f4f4,
+    dark: #1d2833
+);
+
+// Importar reset y variables básicas
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/utilities';
+
+// Variables personalizadas
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
+// Layouts
+@use 'layouts/header';
+@use 'layouts/footer';
+@use 'layouts/hero';       
+@use 'layouts/presentation'; 
+@use 'layouts/featured';   
+@use 'layouts/categories'; 
+
+// Componentes
+@use 'components/feature'; 
+@use 'components/icons'; 
+@use 'components/button';
+@use 'components/card';  
+@use 'components/products-cards';
+
+// Páginas
+@use 'pages/about-us'; 
+@use 'pages/contact'; 

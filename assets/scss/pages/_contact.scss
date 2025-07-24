@@ -1,0 +1,73 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+@use '../base/reset';
+
+/* Página Contacto */
+.contact {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    &__text {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    &__description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+    }
+    
+    &__visual {
+        flex: 1;
+        min-width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    
+        &:hover .contact__image {
+            transform: scale(1.05);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+}
+
+
+
+
+/* Formulario */
+
+.form {
+    &__input {
+        width: 30vw;
+        height: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    &__textarea {
+        width: 30vw;
+        height: 7rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        &__input,
+        &__textarea {
+            width: 80vw;
+        }
+    }
+}
