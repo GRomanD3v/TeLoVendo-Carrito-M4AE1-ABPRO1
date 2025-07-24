@@ -165,7 +165,7 @@ products.forEach((product, index) => {
                             <div class="card-body">
                                 <h5 class="card-title product-card__title">${product.name}</h5>
                                 <p class="card-text product-card__description">${product.description}</p>
-                                <p class="card-text product-card__price fw-bold fs-5">${product.price.toLocaleString('es-CL')}</p>
+                                <p class="card-text product-card__price fw-bold fs-5">$${product.price.toLocaleString('es-CL')}</p>
                                 
                                 <label for="qty-${index}">Cantidad:</label>
                                 <input class="form-control form-control-sm w-50 mb-2" type="number" id="qty-${index}" min="1" value="1">
