@@ -241,7 +241,6 @@ html, body {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/hero-bg.jpg") center/cover no-repeat;
   color: var(--white);
   text-align: center;
-  padding: 6rem 0;
   margin-bottom: 3rem;
 }
 .hero__title {
