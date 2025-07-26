@@ -31,25 +31,32 @@ y los totalizadores de la compra.
 
 a. Detalle de producto comprado:
 
--Código de producto
--Nombre del producto
--Precio del producto
--Unidades compradas
--Valor total del ítem
+  -Código de producto
+  -Nombre del producto
+  -Precio del producto
+  -Unidades compradas
+  -Valor total del ítem
 
 b. Resumen de la compra
 
--Monto neto
--Impuesto
--Monto bruto
+  -Monto neto
+  -Impuesto
+  -Monto bruto
 
 c. Dirección de despacho
 
   - Dirección
   - Comuna
   - Región
-  - Nombre de quien recibe
+  - Nombre de quién recibe
   - Correo electrónico del comprador
+
+
+  ### . Corrección de estilo en hero
+
+  - Modificación de imagen y tamaño
+  - Se agrega margen en el botón
+  - Se dió sombra a los textos para mejor visualización 
 
 
 
