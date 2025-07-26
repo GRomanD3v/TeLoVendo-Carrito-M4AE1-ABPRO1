@@ -723,3 +723,49 @@ html, body {
     width: 80vw;
   }
 }/*# sourceMappingURL=main.css.map */
+
+
+/* Agrega esto al final de main.css */
+.receipt {
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 100%;
+}
+
+.receipt h4 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+.receipt table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.receipt table th {
+    background-color: #f8f9fa;
+    text-align: left;
+}
+
+.receipt-summary {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.receipt-footer {
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+}
+
+@media print {
+    .receipt {
+        font-size: 12pt;
+    }
+    
+    .modal-footer {
+        display: none;
+    }
+}
