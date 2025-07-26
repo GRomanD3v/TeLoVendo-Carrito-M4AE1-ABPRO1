@@ -1,60 +1,64 @@
-# Te lo Vendo - Catálogo Interactivo
+# Te lo Vendo - Generación de boleta con detalle.
 
 ##Integrantes:
 
 -María Teresa de la Fuente
+-Daniela Garrido Olivares
 -Roberto Escobar Vivallo
 -Gonzalo Román Reyes
+
 
 ## Ruta de repositorio: https://github.com/GRomanD3v/TeLoVendo-Carrito-M4AE1-ABPRO1.git
 
 ## Actividad: Introducción al lenguaje JavaScript
 
 ###  Aprendizaje Esperado
-Explicar las características fundamentales del lenguaje JavaScript para el desarrollo web, mediante la implementación práctica en un sitio funcional.
+Utilizar variables simples y sentencias condicionales para el control del
+flujo de un algoritmo que resuelve un problema simple acorde al lenguaje
+Javascript.
 
 ---
 
 ## ✅ Requerimientos cumplidos
 
-### 1. Lista de productos
-El sitio muestra un catálogo de más de 10 productos, cada uno con los siguientes atributos:
 
-- ✅ Imagen del producto  
-- ✅ Nombre del producto  
-- ✅ Código del producto  
-- ✅ Descripción  
-- ✅ Precio
+### . Boleta 
 
-Los productos se generan dinámicamente mediante JavaScript a partir de un arreglo de objetos.
+- ✅ : Genera una boleta con el detalle de los productos comprado
+y los totalizadores de la compra. 
 
----
 
-### 2. Selección de productos
 
-Cada tarjeta de producto permite al usuario:
+a. Detalle de producto comprado:
 
-- ✅ Seleccionar la **cantidad** deseada mediante un campo `input[type="number"]`
-- ✅ Añadir productos al carrito mediante un botón **"Añadir"**
-- ✅ Ver el detalle del producto en un **modal interactivo** que muestra imagen, nombre, descripción y precio
+  -Código de producto
+  -Nombre del producto
+  -Precio del producto
+  -Unidades compradas
+  -Valor total del ítem
 
----
+b. Resumen de la compra
 
-### 3. Totalizador de productos (Carrito)
+  -Monto neto
+  -Impuesto
+  -Monto bruto
 
-Una vez añadidos los productos, el sitio muestra:
+c. Dirección de despacho
 
-- ✅ Tabla con el resumen del carrito:
-  - Nombre del producto
-  - Cantidad seleccionada
-  - Precio unitario
-  - Total por producto
-  - Botón para eliminar productos
+  - Dirección
+  - Comuna
+  - Región
+  - Nombre de quién recibe
+  - Correo electrónico del comprador
 
-- ✅ Sección de resumen de compra:
-  - Valor Neto
-  - Cálculo automático del IVA (19%)
-  - Valor Bruto (Neto + IVA)
-  - Costo de despacho adicional (5%) si el total es menor a $100.000 (IVA incluido)
+
+  ### . Corrección de estilo en hero
+
+  - Modificación de imagen y tamaño
+  - Se agrega margen en el botón
+  - Se dió sombra a los textos para mejor visualización 
+
+
+
 
 

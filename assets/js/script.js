@@ -302,3 +302,113 @@ function removeFromCart(index) {
 
 // Llama a renderCart() al cargar la página para mostrar el carrito inicialmente (vacío)
 document.addEventListener('DOMContentLoaded', renderCart);
+
+
+
+// Agrega estas funciones al final del archivo script.js
+
+// Función para generar el contenido de la boleta
+function generateReceipt() {
+    let receiptHtml = `
+        <div class="receipt">
+            <h4 class="text-center mb-4">Te lo Vendo - Boleta de Compra</h4>
+            <p><strong>Fecha:</strong> ${new Date().toLocaleDateString()}</p>
+            <p><strong>Cliente:</strong> ${document.getElementById('customer-name').value}</p>
+            <p><strong>Correo:</strong> ${document.getElementById('customer-email').value}</p>
+            <p><strong>Dirección:</strong> ${document.getElementById('customer-address').value}, ${document.getElementById('customer-commune').value}, ${document.getElementById('customer-region').value}</p>
+            <p><strong>Teléfono:</strong> ${document.getElementById('customer-phone').value}</p>
+            
+            <hr>
+            
+            <h5 class="mt-4">Detalle de Productos:</h5>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Producto</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+    
+    let netTotal = 0;
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        netTotal += itemTotal;
+        receiptHtml += `
+            <tr>
+                <td>${item.code}</td>
+                <td>${item.name}</td>
+                <td>$${item.price.toLocaleString('es-CL')}</td>
+                <td>${item.quantity}</td>
+                <td>$${itemTotal.toLocaleString('es-CL')}</td>
+            </tr>`;
+    });
+    
+    const ivaTotal = netTotal * 0.19;
+    const shippingCost = netTotal + ivaTotal < 100000 ? (netTotal + ivaTotal) * 0.05 : 0;
+    const grossTotal = netTotal + ivaTotal + shippingCost;
+    
+    receiptHtml += `
+                </tbody>
+            </table>
+            
+            <div class="receipt-summary mt-4">
+                <h5>Resumen de Compra:</h5>
+                <p><strong>Valor Neto:</strong> $${netTotal.toLocaleString('es-CL')}</p>
+                <p><strong>IVA (19%):</strong> $${ivaTotal.toLocaleString('es-CL')}</p>
+                ${shippingCost > 0 ? `<p><strong>Costo de Despacho (5%):</strong> $${shippingCost.toLocaleString('es-CL')}</p>` : ''}
+                <p class="fs-5"><strong>Total a Pagar:</strong> $${grossTotal.toLocaleString('es-CL')}</p>
+            </div>
+            
+            <div class="receipt-footer mt-4 text-center">
+                <p>¡Gracias por su compra!</p>
+                <p>Un correo con esta información ha sido enviado a ${document.getElementById('customer-email').value}</p>
+            </div>
+        </div>`;
+    
+    return receiptHtml;
+}
+
+// Función para "enviar" el correo (simulado)
+function sendEmailReceipt(email, receiptContent) {
+    // En una implementación real, aquí harías una llamada a un servidor para enviar el correo
+    // Para este ejemplo, solo simulamos el envío mostrando un alert
+    console.log(`Correo enviado a: ${email}`);
+    console.log(`Contenido del correo:\n${receiptContent}`);
+    
+    // Mostrar alerta de éxito
+    alert(`¡Compra confirmada! Se ha enviado una copia de la boleta a ${email}`);
+}
+
+// Manejar el envío del formulario
+document.getElementById('shipping-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validar que haya productos en el carrito
+    if (cart.length === 0) {
+        alert('No hay productos en el carrito para confirmar la compra.');
+        return;
+    }
+    
+    // Generar la boleta
+    const receiptContent = generateReceipt();
+    document.getElementById('receipt-content').innerHTML = receiptContent;
+    
+    // Mostrar el modal con la boleta
+    const receiptModal = new bootstrap.Modal(document.getElementById('receiptModal'));
+    receiptModal.show();
+    
+    // "Enviar" el correo (simulado)
+    const customerEmail = document.getElementById('customer-email').value;
+    sendEmailReceipt(customerEmail, receiptContent);
+    
+    // Limpiar el carrito después de la compra
+    cart.length = 0;
+    renderCart();
+    
+    // Limpiar el formulario
+    this.reset();
+});

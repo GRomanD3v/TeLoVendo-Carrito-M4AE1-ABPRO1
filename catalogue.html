@@ -59,6 +59,66 @@
                 </div>
             </section>
 
+           <!-- Datos de despacho -->
+<div class="my-5">
+    <h3>Datos de Despacho</h3>
+    <form id="shipping-form" class="mt-3">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="customer-name" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="customer-name" required>
+            </div>
+            <div class="col-md-6">
+                <label for="customer-email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="customer-email" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="customer-address" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="customer-address" required>
+            </div>
+            <div class="col-md-6">
+                <label for="customer-phone" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="customer-phone" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="customer-region" class="form-label">Región</label>
+                <input type="text" class="form-control" id="customer-region" required>
+            </div>
+            <div class="col-md-4">
+                <label for="customer-commune" class="form-label">Comuna</label>
+                <input type="text" class="form-control" id="customer-commune" required>
+            </div>
+            <div class="col-md-4">
+                <label for="customer-zip" class="form-label">Código Postal</label>
+                <input type="text" class="form-control" id="customer-zip">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="confirm-purchase">Confirmar Compra</button>
+    </form>
+</div>
+
+<!-- Modal para mostrar la boleta -->
+<div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="receiptModalLabel">Boleta de Compra</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="receipt-content">
+                <!-- Aquí se insertará el contenido de la boleta -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
         </div>
     </main>
 
